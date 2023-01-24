@@ -9,7 +9,7 @@ function createImageElement(images) {
     return images.map((image) => 
         `
         <div class="gallery__item">
-            <a class="gallery__link" href="large-image.jpg">
+            <a class="gallery__link" href="${image.original}">
                 <img
                 class="gallery__image"
                 src="${image.preview}"
@@ -26,7 +26,7 @@ galleryContainer.addEventListener("click", cardOnClick)
 function cardOnClick(evt) {
     evt.preventDefault();
 
-    if (evt.target.nodeName !== "img") {
+    if (evt.target.nodeName !== "IMG") {
         return;
     }
 
